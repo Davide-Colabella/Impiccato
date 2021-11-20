@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Impiccato {
@@ -30,7 +31,7 @@ public class Impiccato {
     }
 
     public static void gioco() {
-        String parola = listaParole.randomWord();
+        String parola = listaParole.randomWord().toLowerCase();
         int tentativi = 6;
         String input;
         char[] parolaVuota = new char[parola.length()];
@@ -48,7 +49,7 @@ public class Impiccato {
             System.out.println(parolaVuota);
             System.out.println("Lettere sbagliate: " + lettereSbagliate + " || Parole sbagliate: " + paroleProvate);
             System.out.println("Inserisci una lettera oppure una parola: ");
-            input = in.nextLine().trim();
+            input = in.nextLine().trim().toLowerCase();
             if (input.contains("[0-9]+")) {
                 System.out.println("Carattere non valido.");
             } else if (input.length() == 1) {
